@@ -365,6 +365,17 @@
   align-items: center;
 }
 
+.close-icon {
+  width: 100%;
+  font-size: 2rem;
+  text-align: right;
+  cursor: pointer;
+}
+
+.close-icon:hover {
+  color: white;
+}
+
 .menuList {
   display: flex;
   flex-direction: column;
@@ -395,10 +406,6 @@
   font-size: 0.6rem;
   color: white;
   margin-top: 10px;
-}
-
-.try {
-  color: black;
 }
 
 /* Footer*/

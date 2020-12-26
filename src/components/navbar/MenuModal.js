@@ -4,7 +4,7 @@ import logo from "../../assets/logo.jpg";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-
+import { AiOutlineClose } from "react-icons/ai";
 import Typography from "@material-ui/core/Typography";
 import Menu from "../menues/Menu";
 
@@ -86,6 +86,10 @@ const TransitionsModal = ({ title, id }) => {
       >
         <Fade in={open}>
           <div className={width < 768 ? classes.paperIphone : classes.paper}>
+            <div className="close-icon" onClick={handleClose}>
+              <AiOutlineClose />
+            </div>
+
             <img src={logo} alt="logo" className="logoMenu" />
             <h2>{title}</h2>
             <Menu id={id} />
