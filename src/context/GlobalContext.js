@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useCallback } from "react";
 import Client from "../contentful";
 
 export const GlobalContext = createContext();
@@ -6,7 +6,7 @@ export const GlobalContext = createContext();
 const GlobalContextProvider = ({ children }) => {
   const [menues, setMenues] = useState([]);
 
-  const getData = async () => {
+  const getData = useCallback(async () => {
     try {
       let response = await Client.getEntries({
         content_type: "menu",
@@ -18,7 +18,7 @@ const GlobalContextProvider = ({ children }) => {
     } catch (error) {
       console.log(error);
     }
-  };
+  }, []);
 
   const formatData = (items) => {
     let tempMenues = items.map((item) => {
@@ -34,7 +34,7 @@ const GlobalContextProvider = ({ children }) => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
 
   return (
     <GlobalContext.Provider value={{ menues }}>

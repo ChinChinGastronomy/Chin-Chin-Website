@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import styled, { css } from "styled-components/macro";
+import styled from "styled-components/macro";
 import { slides } from "../../utils/utils";
 import "../../App.css";
 const HeroSection = styled.section`
@@ -83,13 +83,6 @@ const NewHero = ({ children }) => {
     };
   }, [current, length]);
 
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-  };
-
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
   return (
     <HeroSection>
       <HeroWrapper>
