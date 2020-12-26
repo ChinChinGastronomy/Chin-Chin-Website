@@ -1,0 +1,497 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,500;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* NavBar*/
+
+/* Logo*/
+
+.navbar {
+  width: 100%;
+  padding: 8px 8px;
+  background: transparent;
+
+  position: fixed;
+  z-index: 999;
+}
+/* for navbar glassy background*/
+.navbar.active {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border: solid 2px transparent;
+  background-clip: padding-box;
+  width: 100%;
+  padding: 8px 8px;
+
+  position: fixed;
+  z-index: 999;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.hide-nav {
+  display: none;
+}
+
+.dropdown-iphone {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: transparent;
+  padding: 8px;
+  color: white;
+  transition: all 0.3s linear;
+  text-align: center;
+  border-top: 3px solid gold;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+  font-weight: 400;
+  letter-spacing: 3px;
+  font-family: "Poppins 200";
+}
+
+.dropdown-iphone li {
+  width: 100%;
+  padding: 5px 0;
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 60px;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s linear;
+  list-style-type: none;
+}
+.nav-links a {
+  display: block;
+  text-decoration: none;
+  padding: 2rem 0;
+  color: white;
+  transition: all 0.3s linear;
+  text-align: center;
+  font-size: 1.6rem;
+
+  font-weight: 400;
+  letter-spacing: 3px;
+  font-family: "Poppins 200";
+}
+
+.show-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border: solid 2px transparent;
+  background-clip: padding-box;
+  transition: all 0.3s linear;
+  border-radius: 10px;
+  z-index: 50;
+}
+
+.nav-center {
+  width: 100%;
+}
+
+.arrow {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+
+    border-radius: 60px;
+  }
+  .nav-btn {
+    display: none;
+  }
+  .btn-Menu {
+    color: white;
+  }
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-links {
+    height: auto;
+    display: flex;
+    margin-left: 4rem;
+  }
+  .nav-links a {
+    margin: 0 1rem;
+    padding: 0.5rem 0;
+    color: gold;
+    cursor: pointer;
+  }
+
+  .nav-links a:hover {
+    color: lightgoldenrodyellow;
+    transition: all ease-in-out 0.3s;
+  }
+
+  .dropdown {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: lightgoldenrodyellow;
+
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transition: top 0.5s;
+    background-color: #56222e;
+    border: solid 1px lightgoldenrodyellow;
+    border-radius: 10px;
+  }
+
+  .nav-links li:hover > ul {
+    opacity: 1;
+
+    visibility: visible;
+    transition: all ease-in-out 0.4s;
+  }
+
+  .dropdown li {
+    padding: 8px;
+  }
+
+  .dropdown li:hover {
+    color: white;
+    cursor: pointer;
+  }
+}
+
+/* Hero*/
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.active {
+  opacity: 1;
+  transition-duration: 1s;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  width: 100%;
+
+  z-index: 2;
+}
+
+.banner h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  line-height: 60px;
+  text-align: center;
+}
+
+.banner p {
+  color: white;
+  font-size: 1rem;
+  font-family: "Poppins 200";
+  padding: 10px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.cnt-img {
+  border-radius: 60%;
+  margin-top: 50px;
+}
+
+.callToAction {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 25px 0;
+  margin-top: 50px;
+}
+
+.btn-callAction {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 10%;
+  background: #56222e;
+  box-shadow: 5px -5px 18px #3f1922, 0px -3px 7px gold;
+  padding: 10px;
+  margin-left: 10px;
+  font-family: "Poppins 200";
+}
+
+.btn-callAction:hover {
+  color: black;
+  background-color: white;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (min-width: 520px) {
+  .callToAction {
+    justify-content: center;
+    margin: 0;
+  }
+  .btn-callAction {
+    margin-right: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+  }
+
+  .container {
+    margin-top: 150px;
+  }
+
+  .banner h1 {
+    color: white;
+    font-size: 2.8rem;
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+  }
+  .banner p {
+    color: white;
+    font-size: 1.3rem;
+    font-family: "Poppins 200";
+    padding: 10px 0;
+    text-align: center;
+
+    line-height: 30px;
+  }
+
+  .callToAction {
+    justify-content: center;
+  }
+
+  .btn-callAction {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .pork {
+    width: 450px;
+    height: 450px;
+    visibility: hidden;
+  }
+
+  .banner h1 {
+    font-size: 4rem;
+    line-height: 70px;
+  }
+
+  .banner p {
+    font-size: 1.8rem;
+    font-family: "Poppins 200";
+  }
+}
+
+/* Menu*/
+.containerMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  font-family: "Poppins 100";
+}
+
+.logoMenu {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 30px;
+  border-radius: 60px;
+}
+
+.price {
+  margin-top: 10px;
+  width: 100%;
+
+  font-size: 1.5rem;
+  color: gold;
+  text-align: center;
+}
+
+.dietary {
+  font-size: 0.6rem;
+  color: white;
+  margin-top: 10px;
+}
+
+/* Footer*/
+
+.footer {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.footer p {
+  color: white;
+  font-size: 1rem;
+  padding: 3px;
+  font-family: "Poppins 200";
+}
+
+.social {
+  padding: 8px;
+}
+.social-icon {
+  padding: 3px;
+  font-size: 2rem;
+
+  transition: transform 0.3s ease-in;
+}
+
+.social-icon:hover {
+  transform: scale(1.5);
+}
+
+.fb {
+  color: blue;
+}
+
+.insta {
+  color: #d6249f;
+}
+
+.cont-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.cont-contact p {
+  font-family: "Poppins 200";
+  font-size: 1.1rem;
+  line-height: 30px;
+}
+
+.direction {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 10%;
+  background: #56222e;
+  box-shadow: 5px -5px 18px #3f1922, -5px 5px 18px #6d2b3a;
+  padding: 10px;
+  margin-top: 25px;
+  font-family: "Poppins 200";
+  margin-bottom: 10px;
+}
+
+.direction:hover {
+  color: black;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.email {
+  text-decoration: none;
+  color: gold;
+  font-family: "Poppins 200";
+}
+
+.email:hover {
+  color: white;
+}
+@media screen and (min-width: 768px) {
+  .slogan h2 {
+    color: white;
+    font-family: "Great Vibes", cursive;
+    font-size: 3rem;
+  }
+  .outer-contact {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-top: 1px solid #56222e;
+  }
+}
