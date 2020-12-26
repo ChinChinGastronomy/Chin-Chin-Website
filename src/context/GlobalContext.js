@@ -18,7 +18,7 @@ const GlobalContextProvider = ({ children }) => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [setMenues]);
 
   const formatData = (items) => {
     let tempMenues = items.map((item) => {
