@@ -74,7 +74,7 @@ const NewHero = ({ children }) => {
       setCurrent((current) => (current === length - 1 ? 0 : current + 1));
     };
 
-    timeout.current = setTimeout(nextSlide, 2000);
+    timeout.current = setTimeout(nextSlide, 4000);
 
     return () => {
       if (timeout.current) {

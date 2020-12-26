@@ -85,11 +85,10 @@ const TransitionsModal = ({ title, id }) => {
         }}
       >
         <Fade in={open}>
-          <div className={width < 768 ? classes.paperIphone : classes.paper}>
-            <div className="close-icon" onClick={handleClose}>
-              <AiOutlineClose />
-            </div>
-
+          <div
+            className={width < 768 ? classes.paperIphone : classes.paper}
+            onClick={handleClose}
+          >
             <img src={logo} alt="logo" className="logoMenu" />
             <h2>{title}</h2>
             <Menu id={id} />
