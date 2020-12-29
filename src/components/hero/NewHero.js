@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
-import styled from "styled-components/macro";
+import styled, { css } from "styled-components/macro";
 import { slides } from "../../utils/utils";
+import { IoArrowForward, IoArrowBack } from "react-icons/io5";
 import "../../App.css";
+
 const HeroSection = styled.section`
   height: 100vh;
   max-height: 1100px;
@@ -62,6 +64,40 @@ const HeroContent = styled.div`
   color: #fff;
 `;
 
+const SliderButtons = styled.div`
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  display: flex;
+  z-index: 10;
+`;
+
+const arrowButtons = css`
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  cursor: pointer;
+  background: #000d1a;
+  border-radius: 50px;
+  padding: 10px;
+  margin-right: 1rem;
+  user-select: none;
+  transition: 0.3s;
+
+  &:hover {
+    background: #cd853f;
+    transform: scale(1.05);
+  }
+`;
+
+const PrevArrow = styled(IoArrowBack)`
+  ${arrowButtons}
+`;
+
+const NextArrow = styled(IoArrowForward)`
+  ${arrowButtons}
+`;
+
 const NewHero = ({ children }) => {
   const [current, setCurrent] = useState(0);
 
@@ -69,7 +105,15 @@ const NewHero = ({ children }) => {
 
   const timeout = useRef(null);
 
-  useEffect(() => {
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
+
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
+
+  /*useEffect(() => {
     const nextSlide = () => {
       setCurrent((current) => (current === length - 1 ? 0 : current + 1));
     };
@@ -81,7 +125,7 @@ const NewHero = ({ children }) => {
         clearTimeout(timeout.current);
       }
     };
-  }, [current, length]);
+  }, [current, length]);*/
 
   return (
     <HeroSection>
@@ -99,6 +143,10 @@ const NewHero = ({ children }) => {
             </HeroSlide>
           );
         })}
+        <SliderButtons>
+          <PrevArrow onClick={prevSlide} />
+          <NextArrow onClick={nextSlide} />
+        </SliderButtons>
       </HeroWrapper>
     </HeroSection>
   );

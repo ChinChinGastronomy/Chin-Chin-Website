@@ -23,7 +23,6 @@ export const Navbar = () => {
 
   const handleToggle = () => {
     setToggle(!toggle);
-    console.log(toggle);
   };
 
   const handleSubMenu = () => {
