@@ -72,11 +72,11 @@ const SliderButtons = styled.div`
   z-index: 10;
   @media screen and (max-width: 370px) {
     bottom: 60px;
-    right: 100px;
+    right: 106px;
   }
   @media screen and (max-width: 320px) {
     bottom: 10px;
-    right: 82px;
+    right: 85px;
   }
 `;
 
