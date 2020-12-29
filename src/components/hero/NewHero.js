@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components/macro";
 import { slides } from "../../utils/utils";
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
