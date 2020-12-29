@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState, useRef } from "react";
 import styled, { css } from "styled-components/macro";
 import { slides } from "../../utils/utils";
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
@@ -103,7 +103,7 @@ const NewHero = ({ children }) => {
 
   const length = slides.length;
 
-  const timeout = useRef(null);
+  /*const timeout = useRef(null);*/
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
