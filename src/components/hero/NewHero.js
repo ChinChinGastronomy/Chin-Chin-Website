@@ -70,6 +70,14 @@ const SliderButtons = styled.div`
   right: 50px;
   display: flex;
   z-index: 10;
+  @media screen and (max-width: 370px) {
+    bottom: 60px;
+    right: 100px;
+  }
+  @media screen and (max-width: 320px) {
+    bottom: 10px;
+    right: 82px;
+  }
 `;
 
 const arrowButtons = css`
