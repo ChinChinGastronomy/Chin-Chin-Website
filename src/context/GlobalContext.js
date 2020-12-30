@@ -36,6 +36,7 @@ const GlobalContextProvider = ({ children }) => {
     getData();
   }, [getData]);
 
+  console.log(menues);
   return (
     <GlobalContext.Provider value={{ menues }}>
       {children}

@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import styled, { css } from "styled-components/macro";
 import { slides } from "../../utils/utils";
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
+import { TweenMax, Power3 } from "gsap";
+
 import "../../App.css";
 
 const HeroSection = styled.section`
@@ -40,10 +42,10 @@ const HeroSlider = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     height: 100%;
-    background-color: black;
-    opacity: 0.5;
+    width: 100%;
+    background-color: #56222e;
+    opacity: 0.1;
   }
 `;
 const HeroImage = styled.img`
@@ -52,16 +54,8 @@ const HeroImage = styled.img`
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
   object-fit: cover;
-`;
-const HeroContent = styled.div`
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-  max-width: 1600px;
-  width: calc(100% - 100px);
-  color: #fff;
 `;
 
 const SliderButtons = styled.div`
@@ -70,6 +64,7 @@ const SliderButtons = styled.div`
   right: 50px;
   display: flex;
   z-index: 10;
+  opacity: 0;
   @media screen and (max-width: 370px) {
     bottom: 60px;
     right: 106px;
@@ -111,29 +106,27 @@ const NewHero = ({ children }) => {
 
   const length = slides.length;
 
-  /*const timeout = useRef(null);*/
+  let imgBg = useRef(null);
+  let arrows = useRef(null);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrent(current === length - 1 ? 0 : current + 1);
-  };
+  }, [current, length]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrent(current === 0 ? length - 1 : current - 1);
-  };
+  }, [current, length]);
 
-  /*useEffect(() => {
-    const nextSlide = () => {
-      setCurrent((current) => (current === length - 1 ? 0 : current + 1));
-    };
-
-    timeout.current = setTimeout(nextSlide, 4000);
-
-    return () => {
-      if (timeout.current) {
-        clearTimeout(timeout.current);
-      }
-    };
-  }, [current, length]);*/
+  useEffect(() => {
+    TweenMax.to(imgBg, 0.8, {
+      opacity: 1,
+      ease: Power3.easeIn,
+    });
+    TweenMax.to(arrows, 5, {
+      opacity: 1,
+      ease: Power3.easeIn,
+    });
+  }, [prevSlide, nextSlide]);
 
   return (
     <HeroSection>
@@ -143,15 +136,24 @@ const NewHero = ({ children }) => {
             <HeroSlide key={index}>
               {index === current && (
                 <HeroSlider>
-                  <HeroImage src={slide.image} alt="fine dining" />
-
-                  <HeroContent>{children}</HeroContent>
+                  <HeroImage
+                    src={slide.image}
+                    alt="fine dining"
+                    ref={(el) => {
+                      imgBg = el;
+                    }}
+                  />
                 </HeroSlider>
               )}
             </HeroSlide>
           );
         })}
-        <SliderButtons>
+
+        <SliderButtons
+          ref={(el) => {
+            arrows = el;
+          }}
+        >
           <PrevArrow onClick={prevSlide} />
           <NextArrow onClick={nextSlide} />
         </SliderButtons>
