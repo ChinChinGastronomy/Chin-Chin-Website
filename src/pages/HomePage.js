@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 import "../App.css";
 
-import AboutSection from "../components/about section/AboutSection";
+/*import AboutSection from "../components/about section/AboutSection";*/
 import Banner from "../components/hero/Banner";
 import NewHero from "../components/hero/NewHero";
 

@@ -80,26 +80,6 @@ const SliderButtons = styled.div`
   }
 `;
 
-const FadeInNextSection = styled.div`
-  height: 20rem;
-  background: rgb(86, 34, 46);
-  background: linear-gradient(
-    180deg,
-    rgba(86, 34, 46, 1) 0%,
-    rgba(86, 34, 46, 0.4318102240896359) 0%,
-    rgba(240, 248, 250, 0) 100%
-  );
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  h1 {
-    font-size: 4rem;
-    font-family: "Great Vibes", cursive;
-    color: black;
-  }
-`;
-
 const arrowButtons = css`
   width: 50px;
   height: 50px;
