@@ -124,13 +124,14 @@ export const Navbar = () => {
               list1 = el;
             }}
           >
-            <Link
+            <a
+              href="#home"
               onClick={() => {
                 return window.innerWidth > 768 ? null : setToggle(!toggle);
               }}
             >
               Home
-            </Link>
+            </a>
           </li>
           <li
             style={{ opacity: "0" }}
@@ -162,13 +163,14 @@ export const Navbar = () => {
               list3 = el;
             }}
           >
-            <Link
+            <a
+              href="#About"
               onClick={() => {
                 return window.innerWidth > 768 ? null : setToggle(!toggle);
               }}
             >
               About
-            </Link>
+            </a>
           </li>
           <li
             style={{ opacity: "0" }}

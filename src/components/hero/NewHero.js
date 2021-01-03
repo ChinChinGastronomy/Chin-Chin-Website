@@ -44,8 +44,13 @@ const HeroSlider = styled.div`
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: #56222e;
-    opacity: 0.1;
+    background: rgb(86, 34, 46);
+    background: linear-gradient(
+      163deg,
+      rgba(86, 34, 46, 0.4206057422969187) 0%,
+      rgba(240, 248, 250, 0) 66%,
+      rgba(255, 255, 255, 0.4906337535014006) 100%
+    );
   }
 `;
 const HeroImage = styled.img`
@@ -72,6 +77,26 @@ const SliderButtons = styled.div`
   @media screen and (max-width: 320px) {
     bottom: 10px;
     right: 85px;
+  }
+`;
+
+const FadeInNextSection = styled.div`
+  height: 20rem;
+  background: rgb(86, 34, 46);
+  background: linear-gradient(
+    180deg,
+    rgba(86, 34, 46, 1) 0%,
+    rgba(86, 34, 46, 0.4318102240896359) 0%,
+    rgba(240, 248, 250, 0) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 4rem;
+    font-family: "Great Vibes", cursive;
+    color: black;
   }
 `;
 
@@ -129,36 +154,38 @@ const NewHero = ({ children }) => {
   }, [prevSlide, nextSlide]);
 
   return (
-    <HeroSection>
-      <HeroWrapper>
-        {slides.map((slide, index) => {
-          return (
-            <HeroSlide key={index}>
-              {index === current && (
-                <HeroSlider>
-                  <HeroImage
-                    src={slide.image}
-                    alt="fine dining"
-                    ref={(el) => {
-                      imgBg = el;
-                    }}
-                  />
-                </HeroSlider>
-              )}
-            </HeroSlide>
-          );
-        })}
+    <>
+      <HeroSection id="home">
+        <HeroWrapper>
+          {slides.map((slide, index) => {
+            return (
+              <HeroSlide key={index}>
+                {index === current && (
+                  <HeroSlider>
+                    <HeroImage
+                      src={slide.image}
+                      alt="fine dining"
+                      ref={(el) => {
+                        imgBg = el;
+                      }}
+                    />
+                  </HeroSlider>
+                )}
+              </HeroSlide>
+            );
+          })}
 
-        <SliderButtons
-          ref={(el) => {
-            arrows = el;
-          }}
-        >
-          <PrevArrow onClick={prevSlide} />
-          <NextArrow onClick={nextSlide} />
-        </SliderButtons>
-      </HeroWrapper>
-    </HeroSection>
+          <SliderButtons
+            ref={(el) => {
+              arrows = el;
+            }}
+          >
+            <PrevArrow onClick={prevSlide} />
+            <NextArrow onClick={nextSlide} />
+          </SliderButtons>
+        </HeroWrapper>
+      </HeroSection>
+    </>
   );
 };
 

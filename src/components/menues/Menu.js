@@ -12,7 +12,7 @@ const Menu = ({ id }) => {
           <div className="containerMenu" key={item.id}>
             {item.bread ? (
               <div className="menuList">
-                <h3>{item.bread}</h3>
+                <h4>{item.bread}</h4>
               </div>
             ) : null}
             <div className="menuList">

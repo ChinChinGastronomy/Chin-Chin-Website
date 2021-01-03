@@ -7,7 +7,7 @@ import Fade from "@material-ui/core/Fade";
 
 import Typography from "@material-ui/core/Typography";
 import Menu from "../menues/Menu";
-
+import "../../App.css";
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
@@ -90,7 +90,7 @@ const TransitionsModal = ({ title, id }) => {
             onClick={handleClose}
           >
             <img src={logo} alt="logo" className="logoMenu" />
-            <h2>{title}</h2>
+            <h2 className="titleMenu">{title}</h2>
             <Menu id={id} />
             <h5 className="dietary">
               Please contact us fon any enquire on dietary requirements
