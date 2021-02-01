@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
-import Footer from "./components/footer/footer";
-import Navbar from "./components/navbar/Navbar";
+
 import HomePage from "./pages/HomePage";
+import IntroPage from "./pages/introPage";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
@@ -16,11 +16,11 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Fragment>
-        <Navbar />
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" component={IntroPage} />
+
+          <Route exact path="/home" component={HomePage} />
         </Switch>
-        <Footer />
       </Fragment>
     </ThemeProvider>
   );

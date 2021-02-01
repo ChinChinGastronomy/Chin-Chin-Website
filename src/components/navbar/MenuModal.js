@@ -26,8 +26,10 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     width: "40%",
-
     fontFamily: "Poppins 200",
+    ["@media (min-width:768px) and (max-width:900px)"]: {
+      width: "60%",
+    },
   },
   paperIphone: {
     display: "flex",
@@ -51,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
     color: "lightgoldenrodyellow",
     cursor: "pointer",
     outline: "none",
+    fontFamily: "Poppins 200",
   },
 }));
 

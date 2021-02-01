@@ -6,11 +6,13 @@ import logo from "../../assets/logo.jpg";
 
 import "../../App.css";
 import MenuDropDown from "./MenuDropDown";
+import MenuDropDownEvent from "./MenuDropDownEvent";
 import { TweenMax, Power3 } from "gsap";
 
 export const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [subMenu, setSubMenu] = useState(false);
+  const [subMenuEvent, setSubMenuEvent] = useState(false);
   const [navbar, setNavbar] = useState(false);
 
   let logoAnimation = useRef(null);
@@ -18,6 +20,7 @@ export const Navbar = () => {
   let list2 = useRef(null);
   let list3 = useRef(null);
   let list4 = useRef(null);
+  let event1 = useRef(null);
   let burgerMenu = useRef(null);
 
   useEffect(() => {
@@ -45,6 +48,10 @@ export const Navbar = () => {
       opacity: 1.6,
       ease: Power3.easeIn,
     });
+    TweenMax.to(event1, 2.3, {
+      opacity: 1.6,
+      ease: Power3.easeIn,
+    });
   }, []);
 
   const changeBg = () => {
@@ -65,19 +72,27 @@ export const Navbar = () => {
     return setSubMenu(!subMenu);
   };
 
+  const handleSubMenuEvent = () => {
+    return setSubMenuEvent(!subMenuEvent);
+  };
+
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
       setSubMenu(false);
+      setSubMenuEvent(false);
     } else {
       setSubMenu(true);
+      setSubMenuEvent(true);
     }
   };
 
   const onMouseleave = () => {
     if (window.innerWidth < 960) {
       setSubMenu(false);
+      setSubMenuEvent(false);
     } else {
       setSubMenu(false);
+      setSubMenuEvent(false);
     }
   };
 
@@ -133,6 +148,7 @@ export const Navbar = () => {
               Home
             </a>
           </li>
+
           <li
             style={{ opacity: "0" }}
             onMouseEnter={onMouseEnter}
@@ -144,19 +160,50 @@ export const Navbar = () => {
             {window.innerWidth < 768 ? (
               <Fragment>
                 <Link onClick={handleSubMenu}>
-                  Menu <MdArrowDropDown className="arrow" />
+                  Menu
+                  <MdArrowDropDown className="arrow" />
                 </Link>
                 {subMenu && <MenuDropDown />}
               </Fragment>
             ) : window.innerWidth > 768 ? (
               <Fragment>
                 <Link>
-                  Menu <MdArrowDropDown className="arrow" />
+                  Menu
+                  <MdArrowDropDown className="arrow" />
                 </Link>
                 <MenuDropDown />
               </Fragment>
             ) : null}
           </li>
+          {/** Events Menu in Navbar */}
+          <li
+            style={{ opacity: "0" }}
+            ref={(el) => {
+              event1 = el;
+            }}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseleave}
+          >
+            {window.innerWidth < 768 ? (
+              <Fragment>
+                <Link onClick={handleSubMenuEvent}>
+                  Events
+                  <MdArrowDropDown className="arrow" />
+                </Link>
+                {subMenuEvent && <MenuDropDownEvent />}
+              </Fragment>
+            ) : window.innerWidth > 768 ? (
+              <Fragment>
+                <Link>
+                  Event
+                  <MdArrowDropDown className="arrow" />
+                </Link>
+                <MenuDropDownEvent />
+              </Fragment>
+            ) : null}
+          </li>
+
+          {/******************************** */}
           <li
             style={{ opacity: "0" }}
             ref={(el) => {
@@ -169,7 +216,7 @@ export const Navbar = () => {
                 return window.innerWidth > 768 ? null : setToggle(!toggle);
               }}
             >
-              About
+              The Chef
             </a>
           </li>
           <li

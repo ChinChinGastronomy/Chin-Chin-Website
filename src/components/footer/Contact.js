@@ -19,14 +19,6 @@ const Contact = () => {
         >
           {contacts.iconEmail} {contacts.email}
         </a>
-        <a
-          href={contacts.direction}
-          target="_blank"
-          rel="noreferrer"
-          className="direction"
-        >
-          Direction
-        </a>
       </div>
       <div className="slogan">
         <h2>Come and See US</h2>

@@ -36,8 +36,7 @@ export const contacts = {
   iconAdd: <FaAddressBook />,
   phone: "(08) 9313 3490",
   iconPhone: <AiOutlinePhone />,
-  direction:
-    "https://www.google.com/maps/place/Chin+Chin+Gastronomy/@-32.0051871,115.857379,17z/data=!3m1!4b1!4m5!3m4!1s0x2a32bd07d05eb3bd:0xd994797bad6ca867!8m2!3d-32.0051917!4d115.8595677",
+
   email: "chinchingastronomy@gmail.com",
   iconEmail: <AiOutlineMail />,
 };
