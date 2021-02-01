@@ -684,24 +684,32 @@
 
 /* Menu Section*/
 
+.ctnSectionMenu {
+  margin-top: 50px;
+  width: 100%;
+  height: 70vh;
+}
+
 .innerSectionMenu {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 80%;
 }
-
-.ctnSectionMenu {
-  margin-top: 50px;
-  width: 100%;
-  height: auto;
+.innerSectionReverse {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
 }
 
 .sectionLeft {
   position: relative;
   flex: 1;
   width: 90%;
-  height: auto;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -732,6 +740,7 @@
   align-items: center;
   flex: 1;
   margin-top: 20px;
+  height: 100%;
 }
 
 .sectionRight h2 {
@@ -810,15 +819,18 @@ hr {
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
+    height: 100%;
   }
   .innerSectionReverse {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 100%;
   }
   .ctnSectionMenu {
     margin-top: 0;
+    height: 70vh;
   }
 }
 
@@ -1115,9 +1127,6 @@ hr {
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1200px) {
-  .ctnAlaCarte {
-    height: 70vh;
-  }
   .innerSectionh {
     position: relative;
     display: grid;
@@ -1158,9 +1167,6 @@ hr {
 }
 
 @media screen and (min-width: 1201px) {
-  .ctnAlaCarte {
-    height: 70vh;
-  }
   .innerSectionh {
     position: relative;
     display: grid;
@@ -1209,11 +1215,11 @@ hr {
   }
 
   .card-text h3 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 200;
   }
   .card-text P {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 200;
   }
 }
