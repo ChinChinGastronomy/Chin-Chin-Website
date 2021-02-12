@@ -37,7 +37,6 @@ const Maps = () => {
   );
 
   const onLoad = (marker) => {
-    console.log("marker: ", marker);
     setOpenWindowRestaurant(!openWindowRestaurant);
     setOpenWindowParking(!openWindowParking);
   };

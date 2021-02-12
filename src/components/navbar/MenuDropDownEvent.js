@@ -23,7 +23,7 @@ const MenuDropDownEvent = () => {
                       target="_blank"
                       rel="noreferrer"
                       style={{
-                        color: "lightgoldenrodyellow",
+                        color: "black",
                       }}
                     >
                       <Typography>{event.title}</Typography>
