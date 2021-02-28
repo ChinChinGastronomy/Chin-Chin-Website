@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     border: "none",
     fontSize: "1.5rem",
     background: "transparent",
-    color: "black",
+    color: "gold",
     cursor: "pointer",
     outline: "none",
     fontFamily: "Poppins 200",

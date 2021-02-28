@@ -23,7 +23,7 @@ const MenuDropDownEvent = () => {
                       target="_blank"
                       rel="noreferrer"
                       style={{
-                        color: "black",
+                        color: "gold",
                       }}
                     >
                       <Typography>{event.title}</Typography>
@@ -38,7 +38,7 @@ const MenuDropDownEvent = () => {
         <ul
           className={window.innerWidth < 768 ? "dropdown-iphone" : "dropdown"}
         >
-          <li style={{ color: "white", cursor: "auto" }}> No Events Menu</li>
+          <li style={{ color: "gold", cursor: "auto" }}> No Events Menu</li>
         </ul>
       )}
     </Fragment>

@@ -48,6 +48,10 @@ const EnquireFormAndTrading = () => {
             <input type="email" placeholder="Email" name="email" />
           </div>
           <div className="inputs">
+            <label>Phone</label>
+            <input type="number" placeholder="Phone" name="phone" />
+          </div>
+          <div className="inputs">
             <label>Message</label>
             <textarea
               name="message"
