@@ -6,10 +6,7 @@ const AboutLeft = () => {
       <div className="innerCtnAbout">
         <h1>The chef</h1>
         <p>
-          Chef Tao brings you a world fusion cuisine thanks to, his many years
-          of experience all around the world. His passion for the ingridients
-          push him to explore and create the perfect balance of flavours that
-          you will find in his menu.
+          A real fine dining to me is about providing unique and memorable moments to customers, connecting the personality of the chef and restaurant to diners through the combinations of highest quality ingredients and great flavours, paired with good drinks and service.  Personality and unique enjoyable experiences are the keys, can be expressed in different styles, not necessarily always in the form of white table clothes, waiters in bow-ties and expensive bills
         </p>
       </div>
     </div>
