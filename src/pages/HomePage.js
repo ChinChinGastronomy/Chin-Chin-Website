@@ -33,7 +33,7 @@ World fusion fine dining cusine, Book Now"
       <AboutSection />
 
       <div className={isMobile ? "show" : "not-show"}>
-        <h1 className="newSection">Menues</h1>
+        <h1 className="newSection">Menus</h1>
         <hr />
       </div>
 

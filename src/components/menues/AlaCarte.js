@@ -4,7 +4,7 @@ import "../../App.css";
 const AlaCarte = ({ events }) => {
   return (
     <div className="ctnAlaCarte">
-      <h1 className="titleAlaCarte">A La Carte & Events Menu</h1>
+      <h1 className="titleAlaCarte">Drinks Menu & Events</h1>
       <div className={events.length < 2 ? "singleCard" : "innerSectionh"}>
         {events.map((item, index) => {
           return (
