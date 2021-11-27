@@ -38,7 +38,6 @@
   border: none;
   cursor: pointer;
   outline: none;
-  opacity: 0;
 }
 
 .hide-nav {
@@ -78,7 +77,7 @@
 .logo {
   width: 60px;
   height: 60px;
-  opacity: 0;
+
   border-radius: 60px;
 }
 
@@ -267,7 +266,6 @@
   font-weight: 200;
   line-height: 60px;
   text-align: center;
-  opacity: 0;
 }
 
 .banner p {
@@ -277,7 +275,6 @@
   padding: 10px;
   text-align: center;
   line-height: 30px;
-  opacity: 0;
 }
 
 .cnt-img {
@@ -306,7 +303,6 @@
   margin-left: 10px;
   font-family: "Poppins";
   font-weight: 200;
-  opacity: 0;
 }
 
 .btn-callAction:hover {
